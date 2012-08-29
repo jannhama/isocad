@@ -1,0 +1,21 @@
+# This file describes the objects used by Iso Cad
+# Iso Cad (C) 2002 Janne Hämäläinen
+Origo:400,300
+# Object: 0
+Object:-20,-55,60,300,60,16744448,Yes,No,
+# Object: 1
+Object:359,55,150,70,20,16744448,Yes,No,
+# Object: 2
+Object:-400,55,20,70,150,16744448,Yes,No,Copy of Copy of 
+# Object: 3
+Object:0,-20,2,30,30,12632256,Yes,No,Copy of Copy of 
+# Object: 4
+Object:120,-20,30,30,2,12632256,Yes,No,
+# Object: 5
+Object:-160,-20,2,30,30,12632256,Yes,No,Copy of Copy of 
+# Object: 6
+Object:-40,-20,30,30,2,12632256,Yes,No,Copy of Copy of Copy of Copy of 
+# Object: 7
+Object:265,10,30,30,2,12632256,Yes,No,Copy of Copy of 
+# Object: 8
+Object:210,35,30,2,30,12632256,Yes,No,Copy of Copy of Copy of Copy of 

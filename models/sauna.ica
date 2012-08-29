@@ -1,0 +1,39 @@
+# This file describes the objects used by Iso Cad
+# Iso Cad (C) 2002 Janne Hämäläinen
+Origo:400,300
+# Object: 0
+Object:75,45,156,11,4,16777215,Yes,No,
+# Object: 1
+Object:-43,112,4,7,58,16777215,Yes,No,new of object
+# Object: 2
+Object:-345,-45,4,11,58,16777215,Yes,No,Copy of Copy of new of object
+# Object: 3
+Object:-26,98,158,3,5,16777215,Yes,No,new of object
+# Object: 4
+Object:50,60,158,3,5,16777215,Yes,No,Copy of Copy of new of object
+# Object: 5
+Object:-52,108,156,11,4,16777215,Yes,No,Copy of Copy of 
+# Object: 6
+Object:-109,73,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 7
+Object:-53,101,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 8
+Object:-135,60,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 9
+Object:-162,46,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 10
+Object:-189,33,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 11
+Object:-243,6,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 12
+Object:-216,19,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 13
+Object:-84,86,10,3,66,16777215,Yes,No,new of object
+# Object: 14
+Object:-270,-7,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 15
+Object:-294,-20,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 16
+Object:-318,-32,10,3,66,16777215,Yes,No,Copy of Copy of new of object
+# Object: 17
+Object:-343,-45,10,3,66,16777215,Yes,No,Copy of Copy of new of object

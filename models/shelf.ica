@@ -1,0 +1,13 @@
+# This file describes the objects used by Iso Cad
+# Iso Cad (C) 2002 Janne Hämäläinen
+Origo:150,150
+# Object: 0
+Object:-32,-5,2,100,100,16777215,Yes,Yes,Brick
+# Object: 1
+Object:168,291,100,2,100,16777215,Yes,Yes,Brick
+# Object: 2
+Object:168,191,100,2,100,16777215,Yes,Yes,Brick
+# Object: 3
+Object:168,95,100,2,100,16777215,Yes,Yes,Brick
+# Object: 4
+Object:169,96,2,100,100,16777215,Yes,Yes,Brick
