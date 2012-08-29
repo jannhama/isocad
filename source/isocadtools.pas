@@ -20,11 +20,12 @@ unit IsoCadTools;
 
 interface
 uses
-  Windows, Messages, SysUtils, Classes, Dialogs,StdCtrls, filectrl, forms;
+  Windows, Messages, SysUtils, Classes, Dialogs, StdCtrls, filectrl, forms;
 
 type
 
   TImageFormat = (ifBitmapFile, ifJpegFile, ifUnknown);
+  TPointArray = array of TPoint;
 
 
 procedure ParseString(s: string; delimiter: char; dest: TStringlist);
@@ -39,6 +40,7 @@ function RandomN(aRange: integer): integer;
 function ApplicationPath: string;
 function ImageFormat(aFileName: string): TImageFormat;
 function NormalizeRect(R: TRect): TRect;
+function pointInPolygon(const aPolygon: TPointArray; const aPoint: TPoint): Boolean;
 
 
 
@@ -246,5 +248,38 @@ begin
 end;
 
 
+
+function pointInPolygon(const aPolygon: TPointArray; const aPoint: TPoint): Boolean;
+var
+  xi, yi, xj, yj, x, y, i, j: integer;
+  arrayLength: integer;
+  c: boolean;
+begin
+  i := 0;
+  j := 0;
+  c := false;
+  arrayLength := length(aPolygon);
+  j := arrayLength - 1;
+  x := aPoint.x;
+  y := aPoint.Y;
+  for i := 0 to arrayLength - 1 do
+  begin
+    xi := aPolygon[i].X;
+    yi := aPolygon[i].y;
+    xj := aPolygon[j].x;
+    yj := aPolygon[j].y;
+
+
+    if ((((yi <= y) and (Y < yj)) or
+      ((yj <= Y) and (Y < yi))) and
+      (X < (xj - xi) *
+      (Y - yi) / (yj - yi) + xi)) then
+    begin
+      c := not c;
+    end;
+    j := i;
+  end;
+  result := c;
+end;
 end.
 

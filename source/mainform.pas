@@ -734,9 +734,9 @@ begin
         dec(p.x, sizeincrement);
       if key = 39 then
         inc(p.x, sizeincrement);
-      if key = Byte('P') then
+      if key = Byte('B') then
         Sendtoback1Click(Self);
-      if key = Byte('O') then
+      if key = Byte('F') then
         Bringtofront1Click(Self);
       if key = Byte('X') then
         selected^.FlipX(false);

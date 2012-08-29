@@ -21,7 +21,7 @@ unit IsoCadBrick;
 interface
 
 uses
-  Windows, Classes, Graphics, IsoCadBitmap;
+  Windows, Classes, Graphics, IsoCadBitmap, isocadtools;
 
 type
   PBrick = ^TBrick;
@@ -46,7 +46,7 @@ type
     iShowSelection: boolean;
     iAlphaRender: boolean;
     iRegion: HRgn;
-    iPoints: array[0..5] of TPoint;
+    iPoints: TPointArray;
     iRenderBlank: Boolean;
     iCurrentStep: integer;
 
@@ -119,6 +119,7 @@ begin
   DrawOutline := true;
   DrawFilled := true;
   WhiteFill := False;
+  setLength(iPoints, 6);
   Calculate;
 
 end;
@@ -409,15 +410,7 @@ end;
 
 function TBrick.PointInArea(aPoint: TPoint): boolean;
 begin
-  //
-
-  if iRegion = 0 then
-  begin
-    result := false;
-    exit;
-  end;
-
-  result := ptinregion(iRegion, aPoint.X, aPOint.Y);
+  result := PointInPolygon(iPoints, aPoint);
 end;
 
 procedure TBrick.SetOrigo(aOrigo: TPoint);
