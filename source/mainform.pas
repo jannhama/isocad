@@ -28,6 +28,7 @@ const
   KStickwidth = 5;
   KPlatewidth = 50;
   KPlateheight = 5;
+  KVersionNumberString = '1.0.0';
 
 type
   TMainWindow = class(TForm)
@@ -159,6 +160,7 @@ type
     iDrawingCubes: Boolean;
     ZoomMx, ZoomMy: integer;
     zpbcounter: integer;
+  pasteBusy, blitterBusy: boolean;
 
     function getZoomFactor: integer;
     function getZoomRegion: integer;
@@ -669,7 +671,9 @@ end;
 
 procedure TMainWindow.About1Click(Sender: TObject);
 begin
-  //  aboutdlg1.Execute;
+
+  MessageDlg('IsoCad version ' + KVersionNumberString, mtInformation, [mbOk], 0);
+
 end;
 
 procedure TMainWindow.Grid1Click(Sender: TObject);
@@ -793,6 +797,7 @@ var
   drect: TRect;
   i: integer;
 begin
+  blitterBusy := true;
   buffer.SetWhite;
   DrawCubes;
 
@@ -806,7 +811,7 @@ begin
   begin
     ZoomWindow.ZoomPb.Invalidate;
   end;
-
+  blitterBusy := false;
 end;
 
 procedure TMainWindow.Showselection1Click(Sender: TObject);
@@ -1089,8 +1094,18 @@ end;
 
 procedure TMainWindow.Paste1Click(Sender: TObject);
 begin
+  while (blitterBusy = true) do
+  begin
+    application.ProcessMessages;
+  end;
+
+  if (PasteBusy) then exit;
+
+  pastebusy := true;
+
   if copyBrick = nil then
     exit;
+
 
   PasteBrick := New(PBrick);
   PasteBrick^ := TBrick.Create(Origo);
@@ -1103,7 +1118,10 @@ begin
   PasteBrick^.DrawOutline := CopyBrick^.DrawOutline;
   PasteBrick^.WhiteFIll := CopyBrick^.WhiteFIll;
   BrickList.Add(PasteBrick);
+  Bricklist.Capacity := bricklist.Count + 20;
+
   ReDrawAll;
+  pastebusy := False;
 
 end;
 
